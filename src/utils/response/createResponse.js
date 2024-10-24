@@ -19,9 +19,10 @@ export const createResponse = (handlerId, responseCode, data = null, userId) => 
 
   // 패킷 길이 정보를 포함한 버퍼 생성
   const packetLength = Buffer.alloc(config.packet.totalLength);
-  packetLength.writeUInt32BE(buffer.length + config.packet.typeLength, 0); // 패킷 길이에 타입 바이트 포함
-
-  // 패킷 타입 정보를 포함한 버퍼 생성
+  packetLength.writeUInt32BE(
+    buffer.length + config.packet.totalLength + config.packet.typeLength,
+    0,
+  ); // 패킷 길이에 타입 바이트 포함
   const packetType = Buffer.alloc(config.packet.typeLength);
   packetType.writeUInt8(PACKET_TYPE.NORMAL, 0);
 
