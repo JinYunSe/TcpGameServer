@@ -1,14 +1,13 @@
 export const packetNames = {
   common: {
     Packet: 'common.Packet',
-    Ping: 'common.Ping',
+    // packetNames의 common 키 안의 Packet 키에 따른 value로
+    // common.proto 파일의 message Packet을 가져온다는 뜻
   },
   initial: {
-    InitialPacket: 'initial.InitialPacket',
+    InitialPayload: 'initial.InitialPayload',
   },
   game: {
-    CreateGamePayload: 'game.CreateGamePayload',
-    JoinGamePayload: 'game.JoinGamePayload',
     LocationUpdatePayload: 'game.LocationUpdatePayload',
   },
   response: {
@@ -16,6 +15,5 @@ export const packetNames = {
   },
   gameNotification: {
     LocationUpdate: 'gameNotification.LocationUpdate',
-    Start: 'gameNotification.Start',
   },
 };
