@@ -48,7 +48,7 @@ export const loadProtos = async () => {
 };
 
 // object freeze
-// 얉은 복사
-export const getProtosMessages = () => {
+// 얕은 복사
+export const getProtoMessages = () => {
   return { ...protoMessages };
 };

@@ -1,4 +1,5 @@
 import { HANDLER_IDS } from '../constants/handlerIds.js';
+import locationUpdateHandler from './game/loactionUpdate.handler.js';
 import initialHandler from './user/initial.hander.js';
 
 const handlers = {
@@ -7,7 +8,8 @@ const handlers = {
     protoType: 'initial.InitialPayload',
   },
   [HANDLER_IDS.LOCATION_UPDATE]: {
-    //handler:
+    handler: locationUpdateHandler,
+    protoType: 'game.LocationUpdatePayload',
   },
 };
 

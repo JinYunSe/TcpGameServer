@@ -20,7 +20,6 @@ export const onData = (socket) => (data) => {
           case PACKET_TYPE.NORMAL: {
             const { handlerId, userId, payload } = packetParser(packet);
             const handler = getHanderById(handlerId);
-
             handler({ socket, userId, payload });
           }
         }

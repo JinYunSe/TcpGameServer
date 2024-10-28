@@ -1,8 +1,8 @@
 import { PACKET_TYPE, PACKET_TYPE_LENGTH, TOTAL_LENGTH } from '../../constants/header.js';
-import { getProtosMessages } from '../../init/loadProto.js';
+import { getProtoMessages } from '../../init/loadProto.js';
 
 export const createResponse = (handerId, responseCode, data = null) => {
-  const protoMessages = getProtosMessages();
+  const protoMessages = getProtoMessages();
   const Response = protoMessages.response.Response;
 
   const response = {
