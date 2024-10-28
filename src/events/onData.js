@@ -7,7 +7,7 @@ export const onData = (socket) => (data) => {
 
   while (socket.buffer.length > totalHeaderLength) {
     const length = socket.buffer.readUInt32BE(0);
-    const packetType = socket.buffer.readUInt8BE(TOTAL_LENGTH);
+    const packetType = socket.buffer.readUInt8(TOTAL_LENGTH);
 
     if (socket.buffer.length >= length) {
       const packet = socket.buffer.subarray(totalHeaderLength, length);

@@ -20,7 +20,7 @@ export const packetParser = (data) => {
   if (clientVersion !== CLIENT_VERSION) throw Error();
 
   const protoTypeName = getProtoTypeNameByHandlerId(handlerId);
-  if (protoTypeName) new Error();
+  if (!protoTypeName) throw Error();
 
   const [namespace, typeName] = protoTypeName.split('.');
   const payloadType = protoMessages[namespace][typeName];
