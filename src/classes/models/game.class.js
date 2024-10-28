@@ -9,7 +9,7 @@ class Game {
   }
 
   getUser(userId) {
-    return this.user.find((user) => user.id === userId);
+    return this.users.find((user) => user.id === userId);
   }
 
   removeUser(socket) {
