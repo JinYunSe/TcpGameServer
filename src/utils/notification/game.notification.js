@@ -9,6 +9,7 @@ const serializer = (message, type) => {
 
   return Buffer.concat([packetLength, packetType, message]);
 };
+
 export const createLocationPacket = (users) => {
   const protoMessages = getProtoMessages();
   const location = protoMessages.gameNotification.LocationUpdate;
@@ -18,4 +19,15 @@ export const createLocationPacket = (users) => {
   const message = location.create(payload);
   const loactionPacket = location.encode(message).finish();
   return serializer(loactionPacket, PACKET_TYPE.LOCATION);
+};
+
+export const createPingPacket = (timestmap) => {
+  const protoMessages = getProtoMessages();
+  const ping = protoMessages.common.Ping;
+
+  const payload = { timestamp };
+
+  const message = location.create(payload);
+  const loactionPacket = location.encode(message).finish();
+  return serializer(loactionPacket, PACKET_TYPE.PING);
 };

@@ -3,6 +3,7 @@ export const packetNames = {
     Packet: 'common.Packet',
     // packetNames의 common 키 안의 Packet 키에 따른 value로
     // common.proto 파일의 message Packet을 가져온다는 뜻
+    Ping: 'common.Ping',
   },
   initial: {
     InitialPayload: 'initial.InitialPayload',
