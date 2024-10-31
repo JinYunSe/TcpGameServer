@@ -1,20 +1,23 @@
 {
-  "name": "TcpGameServer",
-  "version": "1.0.0",
-  "main": "src/server.js",
-  "license": "MIT",
+  "name": "y",
+  "version": "y",
+  "main": "y",
+  "license": "y",
   "scripts": {
-    "dev": "node src/server.js"
+    "dev": "node src/server.js",
+    "migrate": "node src/db/migrations/createSchema.js"
   },
   "type": "module",
-  "repository": "https://github.com/JinYunSe/TcpGameServer.git",
-  "author": "JinYunSe <123576244+JinYunSe@users.noreply.github.com>",
+  "repository": "y",
+  "author": "y",
   "devDependencies": {
     "nodemon": "^3.1.7",
     "prettier": "^3.3.3"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "lodash": "^4.17.21",
+    "mysql2": "^3.11.3",
     "protobufjs": "^7.4.0",
     "uuid": "^10.0.0"
   }

@@ -3,13 +3,13 @@ class User {
   // id는 유저의 deviceId
   // playerId는 유저의 플레이어 Id,
   // latency는 유저의 클라이언트와 서버간 딜레이 시간
-  constructor(socket, id, playerId, latency) {
+  constructor(socket, id, playerId, latency, coords) {
     this.socket = socket;
     this.id = id;
     this.playerId = playerId;
     this.latency = latency;
-    this.x = 0;
-    this.y = 0;
+    this.x = coords.x;
+    this.y = coords.y;
     this.lastUpdateTime = Date.now();
   }
 
