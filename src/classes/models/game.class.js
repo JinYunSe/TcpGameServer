@@ -22,6 +22,7 @@ class Game {
     if (index !== -1) {
       if (this.users.length === 1) this.latencyManager.clearAll();
 
+      console.log('확인용 : ', this.users[index].id);
       this.latencyManager.removeUser(this.users[index].id);
       return this.users.splice(index, 1)[0];
     }
