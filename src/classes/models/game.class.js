@@ -1,4 +1,3 @@
-import { max } from 'lodash';
 import { createLocationPacket } from '../../utils/notification/game.notification.js';
 import LatencyManager from '../managers/latency.manager.js';
 class Game {
@@ -43,8 +42,8 @@ class Game {
     const locationData = this.users
       .filter((user) => user.id !== userId)
       .map((user) => {
-        const { x, y } = user.caculatePosition(maxLatency);
-        return { id: user.id, playerId: user.playerId, x: x, y: y };
+        const { x, y } = user.calculatePosition(maxLatency);
+        return { id: user.id, playerId: user.playerId, x, y };
       });
 
     return createLocationPacket(locationData);

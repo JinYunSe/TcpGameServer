@@ -4,10 +4,11 @@ class LatencyManager {
   }
 
   addUser(userId, callback, timestamp) {
-    if (!this.intervals.has(userId)) {
-      console.error('중복된 인터벌 확인됩니다.');
+    if (this.intervals.has(userId)) {
+      // TODO: 에러처리
+      //console.error('중복된 인터벌 확인됩니다.');
+      this.intervals.set(userId, new Map());
     }
-    // TODO: 에러처리
     this.intervals.set(userId, setInterval(callback, timestamp));
   }
 

@@ -1,4 +1,4 @@
-import { createPingPacket } from '../../utils/notification/game.notification';
+import { createPingPacket } from '../../utils/notification/game.notification.js';
 
 class User {
   // socket은 유저의 socket
@@ -32,9 +32,10 @@ class User {
     this.socket.write(createPingPacket(now));
   }
 
-  handlerPong(data) {
+  handlePong(data) {
     const now = Date.now();
     this.latency = (now - data.timestamp) / 2;
+    console.log(`${this.id} : ${this.latency}ms`);
   }
 
   calculatePosition(latency) {

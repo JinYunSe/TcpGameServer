@@ -17,17 +17,17 @@ export const createLocationPacket = (users) => {
   const payload = { users };
 
   const message = location.create(payload);
-  const loactionPacket = location.encode(message).finish();
-  return serializer(loactionPacket, PACKET_TYPE.LOCATION);
+  const locationPacket = location.encode(message).finish();
+  return serializer(locationPacket, PACKET_TYPE.LOCATION);
 };
 
-export const createPingPacket = (timestmap) => {
+export const createPingPacket = (timestamp) => {
   const protoMessages = getProtoMessages();
   const ping = protoMessages.common.Ping;
 
   const payload = { timestamp };
 
-  const message = location.create(payload);
-  const loactionPacket = location.encode(message).finish();
-  return serializer(loactionPacket, PACKET_TYPE.PING);
+  const message = ping.create(payload);
+  const pingPacket = ping.encode(message).finish();
+  return serializer(pingPacket, PACKET_TYPE.PING);
 };

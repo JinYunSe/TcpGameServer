@@ -1,6 +1,6 @@
 import { HANDLER_IDS } from '../constants/handlerIds.js';
-import locationUpdateHandler from './game/loactionUpdate.handler.js';
-import initialHandler from './user/initial.hander.js';
+import locationUpdateHandler from './game/locationUpdate.handler.js';
+import initialHandler from './user/initial.handler.js';
 
 const handlers = {
   [HANDLER_IDS.INITIAL]: {
@@ -13,15 +13,15 @@ const handlers = {
   },
 };
 
-export const getHanderById = (handlerId) => {
+export const getHandlerById = (handlerId) => {
   if (!handlers[handlerId]) throw Error();
-  console.log('getProtoTypeNameByHandlerId : ', handlerId);
+  //console.log('getProtoTypeNameByHandlerId : ', handlerId);
   return handlers[handlerId].handler;
 };
 
 export const getProtoTypeNameByHandlerId = (handlerId) => {
-  console.log('handlerId : ', handlers[handlerId]);
+  //console.log('handlerId : ', handlers[handlerId]);
   if (!handlers[handlerId]) throw Error();
-  console.log('getProtoTypeNameByHandlerId : ', handlerId);
+  //console.log('getProtoTypeNameByHandlerId : ', handlerId);
   return handlers[handlerId].protoType;
 };

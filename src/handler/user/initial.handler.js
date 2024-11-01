@@ -2,7 +2,7 @@ import User from '../../classes/models/user.class.js';
 import { HANDLER_IDS, RESPONSE_SUCCESS_CODE } from '../../constants/handlerIds.js';
 import { createUser, findUserByDeviceId, updateUserLocation } from '../../db/user/user.db.js';
 import { getGameSession } from '../../sessions/game.session.js';
-import { addUser } from '../../sessions/user.sesson.js';
+import { addUser } from '../../sessions/user.session.js';
 import { createResponse } from '../../utils/response/createResponse.js';
 
 const initialHandler = async ({ socket, userId, payload }) => {

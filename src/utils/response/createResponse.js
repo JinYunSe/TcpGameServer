@@ -1,12 +1,12 @@
 import { PACKET_TYPE, PACKET_TYPE_LENGTH, TOTAL_LENGTH } from '../../constants/header.js';
 import { getProtoMessages } from '../../init/loadProto.js';
 
-export const createResponse = (handerId, responseCode, data = null) => {
+export const createResponse = (handlerId, responseCode, data = null) => {
   const protoMessages = getProtoMessages();
   const Response = protoMessages.response.Response;
 
   const response = {
-    handerId,
+    handlerId,
     responseCode,
     timestamp: Date.now(),
     data: data ? Buffer.from(JSON.stringify(data)) : null,
